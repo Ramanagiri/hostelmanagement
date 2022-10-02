@@ -1,0 +1,40 @@
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#title {
+  background-color: #e8334e;
+  color: white;
+}
+h1 {
+  font-family: "Smooch", cursive;
+  font-size: 50px;
+}
+
+.container-fluid {
+  padding: 5% 10%;
+}
+
+.navbar {
+  margin-bottom: 4.5rem;
+}
+.navbar-brand {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+.nav-link {
+  font-size: 1.2rem;
+}
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+.rotated {
+  transform: rotate(20deg);
+}
