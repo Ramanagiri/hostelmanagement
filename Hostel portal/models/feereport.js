@@ -2,11 +2,14 @@ const Sequelize = require("sequelize");
 
 const sequelize = require("../util/database");
 
-const Addfeedetail = sequelize.define("student", {
+const addStudent = sequelize.define("student", {
   SNo: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
+  },
+  StudentId: {
+    type: Sequelize.INTEGER,
   },
   StudentName: {
     type: Sequelize.STRING,
