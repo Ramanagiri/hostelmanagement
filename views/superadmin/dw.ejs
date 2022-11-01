@@ -1,102 +1,230 @@
 <%- include('partials/header')-%>
-    <style>
-      body {
-        background-color: #e6d2aa;
-      }
+<style>
+  body {
+    background-color: #e6d2aa;
+    font-family: "Times New Roman", Times, serif;
+  }
+  .nav-link {
+    font-family: var(--bs-body-font-family);
+  }
+  form.example input[type="text"] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    height: 40px;
+    width: 320px;
+    background: #f1f1f1;
+  }
 
-      * {
-        box-sizing: border-box;
-      }
+  form.example button {
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    background: #2196f3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
 
-      form.example input[type="text"] {
-        padding: 10px;
+  form.example button:hover {
+    background: #0b7dda;
+  }
+
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .search {
+    right: 0.55%;
+    padding-bottom: 30px;
+  }
+  .example {
+    padding-bottom: 30px;
+  }
+  .search {
+    right: 0.55%;
+    overflow: hidden;
+    position: fixed;
+  }
+  th {
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .table {
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    justify-content: center;
+  }
+  h1 {
+    margin-top: 70px;
+    font-weight: 300;
+    margin-left: 10px;
+  }
+
+  .navbar {
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  }
+  .buttons1 {
+    background-color: #2196f3;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 540;
+  }
+  .buttons1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+  .edit:first-child {
+    margin-left: 10px;
+  }
+  .edit {
+    top: 0px;
+    left: 20px;
+    margin: 15px;
+  }
+  .i2 {
+    right: 0.55%;
+    overflow: hidden;
+    position: fixed;
+  }
+
+
+
+  .button-box {
+    display: inline;
+    
+    border: 1.5px solid black;
+    height: 100px;
+    width: 110px;
+    margin: 55px auto;
+    position: relative;
+    border-radius: 60px;
+    background: #fff
+    }
+
+    .toggle-btn {
         font-size: 17px;
-        border: 1px solid grey;
-        float: left;
-        width: 80%;
-        background: #f1f1f1;
-      }
-
-      form.example button {
-        float: left;
-        width: 20%;
-        padding: 10px;
-        background: #2196f3;
-        color: white;
-        font-size: 17px;
-        border: 1px solid grey;
-        border-left: none;
+        padding: 10px 30px;
         cursor: pointer;
-      }
-
-      form.example button:hover {
-        background: #0b7dda;
-      }
-
-      form.example::after {
-        content: "";
-        clear: both;
-        display: table;
-      }
-      .search {
-        display: flex;
-      }
-      .example {
-        padding: 30px 50px;
-      }
-      /* h1 {
-        margin-top: 80px;
-        margin-left: 200px;
-        padding: 40px;
-        font-weight: 300;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      } */
-      .flexy {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding: 60px;
-      }
-
-      .buttons1 {
-        background-color: #2196f3;
-        border: none;
-        color: white;
-        border-radius: 12px;
-        margin: 50px 40px;
-        padding: 15px 32px;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
         text-align: center;
-        text-decoration: none;
-        font-size: 30px;
-        font-weight: 540;
-        font-family: "Times New Roman", Times, serif;
-      }
-      .buttons1:hover {
-        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-          0 17px 50px 0 rgba(0, 0, 0, 0.19);
-      }
-    </style>
-  </head>
+        color: white;
+    }
+    
+
+    #btn {
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 149px;
+        height: 100%;
+        background: #2196f3;
+        border-radius: 30px;
+        transition: .5s;
+    }
+
+
+
+
+</style>
+</head>
+<body>
   <%- include('partials/navbar')-%>
-    <div class="flexy">
-      <div class="flexy2">
-        <button class="buttons1" onclick="location.href = '#';" ;>
-          Attendance
-        </button>
-        <button class="buttons1" onclick="location.href = '#';" ;>
-          Late comer
-        </button>
-        <button class="buttons1" onclick="location.href = '#';" ;>
-          Absentees
-        </button>
-      </div>
-      <div class="flexy3">
-        <button class="buttons1" onclick="location.href = '#';" ;>Leave</button>
-        <button class="buttons1" onclick="location.href = '#';" ;>
-          Permission
-        </button>
-      </div>
-    </div>
+  <h1> REPORT GENERATOR</h1>
+  <br />
+
+
+  <div class="form-box">
+  <div class="button-box">
+    <div id="btn"></div>
+    <button type="button" class="toggle-btn" onclick="leftClick()">PRESENT</button>
+    <button type="button" class="toggle-btn" onclick="rightClick()">ABSENT</button>
+  </div>
+</div>
+<script src="toggle.js"></script>
+
+
+
+  <div class="search">
+    <form class="example" action="/action_page.php" style="max-width: 400px">
+      <input
+        class="search"
+        type="text"
+        placeholder="Any Field..."
+        name="search2"
+      />
+      <button class="search" type="submit">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+  <div class="add">
+    <button class="buttons1 edit"><i class="bi bi-plus-lg"></i> ADD</button>
+    <button class="buttons1 edit">
+      <i class="bi bi-pencil-fill"></i> MODIFY
+    </button>
+    <button class="buttons1 edit">
+      <i class="bi bi-save2-fill"></i> SAVE
+    </button>
+    <button class="buttons1 edit">
+      <i class="bi bi-hand-thumbs-up-fill"></i> DONE
+    </button>
+  </div>
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>S.no</th>
+        <th>Student ID</th>
+        <th>Student Name</th>
+        <th>Register No</th>
+        <th>Present</th>
+        <th>Absent</th>
+        <th>Leave</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="submit" class="buttons1 i2">
+    Print <i class="bi bi-printer-fill"></i>
+  </button>
   </body>
 </html>
