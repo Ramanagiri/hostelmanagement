@@ -1,0 +1,97 @@
+<%- include('partials/header')-%>
+    <style>
+      body {
+        background-color: #e6d2aa;
+        /* font-family: Arial; */
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      form.example input[type="text"] {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+      }
+
+      form.example button {
+        float: left;
+        width: 20%;
+        padding: 10px;
+        background: #2196f3;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+      }
+
+      form.example button:hover {
+        background: #0b7dda;
+      }
+
+      form.example::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .search {
+        display: flex;
+      }
+      .example {
+        padding: 30px 50px;
+      }
+
+      .flexy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px;
+      }
+
+      .buttons1 {
+        background-color: #2196f3;
+        border: none;
+        color: white;
+        border-radius: 12px;
+        margin: 50px 40px;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: 540;
+        font-family: "Times New Roman", Times, serif;
+      }
+      .buttons1:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+          0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      }
+    </style>
+  </head>
+  <%- include('partials/navbar')-%>
+    <div class="flexy">
+      <div class="flexy2">
+        <button class="buttons1" onclick="location.href = '#';" ;>
+          Over all
+        </button>
+        <button class="buttons1" onclick="location.href = '#';" ;>
+          Late comer
+        </button>
+        <button class="buttons1" onclick="location.href = '#';" ;>
+          Absentees
+        </button>
+      </div>
+      <div class="flexy3">
+        <button class="buttons1" onclick="location.href = '#';" ;>Leave</button>
+        <button class="buttons1" onclick="location.href = '#';" ;>
+          Permission
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
