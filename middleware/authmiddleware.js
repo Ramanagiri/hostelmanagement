@@ -42,4 +42,5 @@ const checkuser= (req,res,next) =>{
         next();
     }
 }
+
 module.exports = { requiredAuth , checkuser};

@@ -32,7 +32,7 @@ const handleErrors = (err) => {
 const maxAge = 3* 24* 60* 60 ; //expects in seconds (jwt), expects in milliseconds (cookies)
 
 const createToken = (id) => {
-  return jwt.sign({id }, 'srm institute of ktr technology ktr portal hostel', {
+  return jwt.sign({ id }, 'srm institute of ktr technology ktr portal hostel', {
     expiresIn: maxAge
   });
 }
