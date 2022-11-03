@@ -1,5 +1,5 @@
 const http = require("http");
-
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -14,12 +14,13 @@ const server = http.createServer();
 //middleware
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cookieparser());
 
 //view engine
 app.set('view engine', 'ejs');
 // database connection
 const dbURI =
-  "mongodb+srv://rajarajan13:rajarajan13@cluster.39bespc.mongodb.net/Hostelportal";
+  process.env.MONGODB_URI
   mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
