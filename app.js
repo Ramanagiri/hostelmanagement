@@ -1,7 +1,6 @@
 const http = require("http");
 require('dotenv').config();
 const express = require("express");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cookieparser = require('cookie-parser');
 const authRoutes = require("./routes/authroutes");
@@ -32,7 +31,7 @@ const dbURI =
 
 // routes
 app.get('*', checkuser);
-app.get("/", (req, res) => res.render("index"));
+app.get("/", (req, res) => res.render("./superadmin/index"));
 app.get("/smoothies", requiredAuth, (req, res) => res.render("smoothies"));
 app.use(authRoutes);
 
@@ -54,12 +53,3 @@ app.get('/read-cookies', (req, res) => {
 })
 
 
-// sequelize
-//   .sync()
-//   .then((result) => {
-//     app.listen(3000);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
- // trying out git
