@@ -1,10 +1,10 @@
-const Sequelize = require("sequelize");
+const { Sequelize, DataTypes, Model } = require('sequelize');
+const sequelize = new Sequelize('sqlite::memory:');
 
-const sequelize = require("../util/database");
 
-const addStudent = sequelize.define("student", {
-  
+class bookingreport extends Model {}
 
+bookingreport.init({
   StudentId: {
     type: Sequelize.INTEGER,
     allowNull: false
@@ -32,6 +32,10 @@ const addStudent = sequelize.define("student", {
     type: DataTypes.BOOLEAN,
     allowNull:false
   }
+}, {
+  sequelize, 
+  modelName: 'bookingreport' 
 });
 
-module.exports = Addfeedetail;
+
+console.log(bookingreport === sequelize.models.bookingreport);
